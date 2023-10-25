@@ -2,6 +2,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import  Login  from "./app/screens/Login";
 import Home from './app/screens/Home';
+import InternalLayout from './app/screens/InternalLayout';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { useEffect, useState } from 'react';
@@ -10,16 +11,6 @@ import { FIREBASE_AUTH } from './firebaseConfig';
 
 
 const Stack = createNativeStackNavigator();
-
-const InternalStack = createNativeStackNavigator();
-
-function InternalLayout() {
-  return(
-    <InternalStack.Navigator>
-      <InternalStack.Screen name="home" component={Home}/>
-    </InternalStack.Navigator>
-  )
-}
 
 export default function App() {
   const [user, setUser] = useState<User | null>(null);
